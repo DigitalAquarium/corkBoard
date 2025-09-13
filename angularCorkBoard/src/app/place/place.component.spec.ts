@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PinComponent } from './pin.component';
+import { PlaceComponent } from './place.component';
 
-describe('PinComponent', () => {
-  let component: PinComponent;
-  let fixture: ComponentFixture<PinComponent>;
+describe('GeolocationComponent', () => {
+  let component: PlaceComponent;
+  let fixture: ComponentFixture<PlaceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PinComponent]
+      imports: [PlaceComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PinComponent);
+    fixture = TestBed.createComponent(PlaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

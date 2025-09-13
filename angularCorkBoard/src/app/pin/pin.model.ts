@@ -1,5 +1,6 @@
 import {Vendor} from '../vendor/vendor.model';
 import {Country} from '../country';
+import {Place} from '../place/place.model';
 
 interface BasicPin {
   id: number;
@@ -16,7 +17,8 @@ interface VendorPin extends BasicPin {
   vendor: Vendor;
 }
 interface GeoPin extends BasicPin {
-  geoLocation: Geolocation;
+  place: Place;
 }
 
-export type PinModel = GeoPin | VendorPin | (GeoPin & VendorPin);
+export type Pin = GeoPin | VendorPin | (GeoPin & VendorPin);
+//export type Pin = VendorPin;
