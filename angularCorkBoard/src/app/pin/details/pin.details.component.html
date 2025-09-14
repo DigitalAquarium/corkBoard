@@ -1,5 +1,12 @@
-<p>pin works!</p>
-<h2>{{pin.name}}</h2>
-<p>{{pin.width}} x {{pin.height}}</p>
-<p>{{pin.description}}</p>
-<img [src]="pin.image">
+
+
+<div class="pin-details">
+  <div class="pin-image-container">
+    <img class="pin-image fit-image" [src]="pin.image">
+  </div>
+  <div class="pin-rhs">
+    <h2><app-flagtext [country]="pin.country" [text]="pin.name" /></h2>
+    <p>{{pin.description}}</p>
+    <div id="osm-map"></div>
+  </div>
+</div>

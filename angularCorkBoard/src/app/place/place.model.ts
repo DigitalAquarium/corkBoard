@@ -9,6 +9,3 @@ export interface Place {
   lat: number;
   lng: number;
 }
-
-export class GeoLocation {
-}
