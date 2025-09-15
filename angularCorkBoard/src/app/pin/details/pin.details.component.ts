@@ -1,18 +1,19 @@
 import {AfterViewInit, Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ActivatedRoute} from '@angular/router';
-import {Pin} from '../pin.model';
+import {isGeoPin, isVendorPin, Pin} from '../pin.model';
 import {PinService} from '../pin.service';
 import {Country} from '../../country';
 import {VendorService} from '../../vendor/vendor.service';
 import 'leaflet/dist/leaflet.css';
 import L, {LatLng} from "leaflet";
 import {FlagtextComponent} from '../../flagtext/flagtext.component';
+import {FitimageComponent} from '../../fitimage/fitimage.component';
 
 
 @Component({
   selector: 'app-pin-details',
-  imports: [CommonModule,FlagtextComponent],
+  imports: [CommonModule, FlagtextComponent, FitimageComponent],
   templateUrl: './pin.details.component.html',
   standalone: true,
   styleUrls: ['./pin.details.component.css']
@@ -46,7 +47,7 @@ export class PinDetailsComponent implements AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    if ('place' in this.pin) {
+    if (isGeoPin(this.pin)) {
       let map = L.map('osm-map');
       let target = new LatLng(this.pin.place.lat, this.pin.place.lng);
       map.setView(target, 6);
@@ -60,4 +61,7 @@ export class PinDetailsComponent implements AfterViewInit{
         .openPopup();
     }
   }
+
+  protected readonly isGeoPin = isGeoPin;
+  protected readonly isVendorPin = isVendorPin;
 }

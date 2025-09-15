@@ -22,3 +22,10 @@ interface GeoPin extends BasicPin {
 
 export type Pin = GeoPin | VendorPin | (GeoPin & VendorPin);
 //export type Pin = VendorPin;
+
+export function isGeoPin(pin:Pin): pin is GeoPin {
+  return 'place' in pin
+}
+export function isVendorPin(pin:Pin): pin is VendorPin {
+  return 'vendor' in pin
+}

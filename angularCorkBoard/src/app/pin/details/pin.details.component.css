@@ -9,29 +9,39 @@
   width: 50vw;
   left:25vw;
   background-color:cornflowerblue;
+  border-radius:20px;
+}
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .pin-image-container {
-  display:flex;
-  align-items: center;
-  justify-content: center;
+  width:45%;
 }
-
+.pin-image-container img{
+  max-width: 75%;
+  max-height: 75%;
+}
 .pin-rhs {
+  width:55%;
   overflow-y:scroll;
 }
-
 
 #osm-map {
   height: 400px;
   width: 90%;
   margin: 5%;
 }
-.fit-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-.pin-image{
-  max-width: 75%;
-  max-height: 75%;
-}
+

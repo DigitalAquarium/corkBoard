@@ -1,12 +1,16 @@
 
 
-<div class="pin-details">
-  <div class="pin-image-container">
-    <img class="pin-image fit-image" [src]="pin.image">
-  </div>
+<div class="pin-details fade-in">
+  <app-fitimage class="pin-image-container" [src]="pin.image" [alt]="pin.name+' pin'" />
   <div class="pin-rhs">
     <h2><app-flagtext [country]="pin.country" [text]="pin.name" /></h2>
     <p>{{pin.description}}</p>
-    <div id="osm-map"></div>
+    <div *ngIf="isVendorPin(pin)">
+      <a [href]="pin.vendor.url"><app-flagtext [country]="pin.vendor.country" [text]="pin.vendor.name" /></a>
+    </div>
+    <div *ngIf="isGeoPin(pin)">
+      <a [href]="pin.place.url"><app-flagtext [country]="pin.place.country" [text]="pin.place.name" /></a>
+      <div id="osm-map"></div>
+    </div>
   </div>
 </div>
