@@ -46,8 +46,14 @@ export class PinService {
     ];
   }
 
-  getPinByID(id: number): Pin | undefined {
-    return this.pinList.find((pin: Pin) => pin.id === id);
+  getPinByID(id: number): Pin {
+    let p = this.pinList.find((pin: Pin) => pin.id === id);
+    if (p == undefined) {
+      return this.pinList[0]
+    }
+    else{
+      return p;
+    }
   }
 
 }

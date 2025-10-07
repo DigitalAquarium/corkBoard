@@ -5,4 +5,7 @@ export interface Poke {
   pin: Pin;
   x: number;
   y: number;
+  day?: number;
+  month?: number;
+  year?: number;
 }

@@ -1,12 +1,8 @@
-/*import { Routes } from '@angular/router';
-
-export const routes: Routes = [];
-*/
-
 import {Routes} from '@angular/router';
 import {AppComponent} from './app.component';
 import {VendorComponent} from './vendor/vendor.component';
 import {PinDetailsComponent} from './pin/details/pin.details.component';
+import {BoardComponent} from './board/board.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +19,11 @@ export const routes: Routes = [
     path: 'vendor/:id',
     component: VendorComponent,
     title: 'VENDOR AAAAAAAAAAAAAAA',
+  },
+  {
+    path: 'board',
+    component: BoardComponent,
+    title: 'Board',
   },
 ];
 export default routes;

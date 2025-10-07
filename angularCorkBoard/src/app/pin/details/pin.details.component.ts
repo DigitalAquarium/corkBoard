@@ -25,25 +25,7 @@ export class PinDetailsComponent implements AfterViewInit{
   vendorService = inject(VendorService);
   constructor() {
     const pinId = Number(this.route.snapshot.params['id']);
-    let x = this.pinService.getPinByID(pinId);
-    console.log(x);
-    if (x===undefined){
-      this.pin = {
-        id: 0,
-        slug: "birb",
-        name: "Birb error",
-        image: "birb.png",
-        country: Country.NL,
-        description: "This pin has a birb on it :D",
-        vendor: this.vendorService.getVendorByID(0),
-        //uploader: User;
-        width: 30,
-        height: 34,
-      }
-    }
-    else {
-      this.pin = x;
-    }
+    this.pin = this.pinService.getPinByID(pinId);
   }
 
   ngAfterViewInit(): void {

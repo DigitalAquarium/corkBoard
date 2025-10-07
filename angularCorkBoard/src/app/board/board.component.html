@@ -1,2 +1,8 @@
-<p>board works!</p>
 
+
+<div class="board">
+  @for (poke of pokes; track poke.pin) {
+    <p>{{ poke.pin.name }}  {{poke.id}}</p>
+    <app-poke [poke]="poke" [zoom]=10 />
+  }
+</div>
